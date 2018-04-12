@@ -3,11 +3,13 @@ import {connect} from 'react-redux';
 import './styles/Home.css';
 import Nav from './Nav';
 import Dashboard from './Dashboard';
+import { LoadingBar } from 'react-redux-loading-bar';
 
 class Home extends Component {
   render() {
     return (
       <div className='home'>
+        <LoadingBar />
         <div className='Nav'>
           <Nav />
         </div>

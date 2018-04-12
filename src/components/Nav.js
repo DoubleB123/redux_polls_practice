@@ -4,7 +4,6 @@ import './styles/Nav.css';
 
 class Nav extends Component {
   render() {
-    console.log(this.props.location);
     return (
       <div className='navbar'>
         <ul className='navlist'>
