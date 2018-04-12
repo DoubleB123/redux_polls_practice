@@ -1,0 +1,16 @@
+.poll-selector-list {
+    display: flex;
+    flex-direction: row;
+    justify-content:center
+}
+
+.poll-display-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 8%;
+}
+
+a {
+    cursor: pointer;
+}
