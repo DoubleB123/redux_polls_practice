@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {handleInitialData} from '../actions/shared';
 import Home from './Home';
+import Leaderboard from './Leaderboard';
 
 class App extends Component {
   componentDidMount () {
@@ -13,7 +14,7 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/leaderboard' component={Home} />
+          <Route exact path='/leaderboard' component={Leaderboard} />
           <Route exact path='/add' component={Home} />
         </Switch>
       </BrowserRouter>

@@ -1,0 +1,20 @@
+.userprofile-li {
+    display: flex;
+}
+
+.userprofile-li h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.userprofile-li img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+.userprofile-li p {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
