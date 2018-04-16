@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import './styles/Home.css';
 import Nav from './Nav';
 import Dashboard from './Dashboard';
-import { LoadingBar } from 'react-redux-loading-bar';
+import LoadingBar from 'react-redux-loading-bar';
 
 class Home extends Component {
   render() {
