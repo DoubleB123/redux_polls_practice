@@ -1,4 +1,10 @@
 .navlist {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+}
+
+.navlist-li {
+    padding: 0px;
+    margin-right: 2em;
 }

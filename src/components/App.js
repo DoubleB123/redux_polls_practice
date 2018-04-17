@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {handleInitialData} from '../actions/shared';
 import Home from './Home';
 import Leaderboard from './Leaderboard';
+import AddPoll from './AddPoll';
 
 class App extends Component {
   componentDidMount () {
@@ -15,7 +16,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/leaderboard' component={Leaderboard} />
-          <Route exact path='/add' component={Home} />
+          <Route exact path='/add' component={AddPoll} />
         </Switch>
       </BrowserRouter>
     );
