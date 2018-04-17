@@ -8,3 +8,13 @@
     height: 2em;
     border-radius: .3em;
 }
+
+.addpoll-form button {
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1.3em;
+    background: white;
+    border: .1em solid gray;
+    width: 10%;
+    height: 2em;
+}
