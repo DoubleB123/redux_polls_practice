@@ -1,3 +1,10 @@
 .addpoll-form {
     margin-left: 8%;
 }
+
+.addpoll-form input {
+    border: .1em solid gray;
+    width: 35%;
+    height: 2em;
+    border-radius: .3em;
+}
