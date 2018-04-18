@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 import './styles/AddPoll.css';
 import Nav from './Nav';
 
@@ -16,10 +17,22 @@ class AddPoll extends Component {
     this.handleChange = this.handleChange.bind(this); 
   }
 
-  handleChange(event, key) {
+  handleChange = (event, key) => {
     const newState = {};
     newState[key] = event.target.value;
     this.setState(newState);
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('add poll');
+    this.props.history.push('/');
+  }
+
+  isDisabled = () => {
+    const {question, A, B, C, D} = this.state;
+    return (question === '' || A === '' ||
+        B === '' || C === '' || D === '')
   }
 
   render() {
@@ -28,7 +41,7 @@ class AddPoll extends Component {
         <div className='Nav'>
           <Nav />
         </div>
-        <form className='addpoll-form'>
+        <form className='addpoll-form' onSubmit={this.handleSubmit}>
           <h3>What is your question?</h3>
           <input type='text' value={this.state.question} onChange={(event) => this.handleChange(event, 'question')}/>
           <h3>What are the options?</h3>
@@ -41,7 +54,7 @@ class AddPoll extends Component {
           <h4>D.</h4>
           <input type='text' value={this.state.D} onChange={(event) => this.handleChange(event, 'D')}/>
 
-          <button className='addpoll'>Submit</button>
+          <button className='addpoll' type='submit' disabled={this.isDisabled()}>Submit</button>
         </form>
       </div>
     );
