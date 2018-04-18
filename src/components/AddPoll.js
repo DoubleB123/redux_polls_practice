@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
 import './styles/AddPoll.css';
 import Nav from './Nav';
+import {handleAddPoll} from '../actions/polls';
 
 class AddPoll extends Component {
   constructor(props) {
     super(props);
     this.state = {
       question: '',
-      A: '',
-      B: '',
-      C: '',
-      D: '',
+      a: '',
+      b: '',
+      c: '',
+      d: '',
     }
     this.handleChange = this.handleChange.bind(this); 
   }
@@ -25,14 +25,14 @@ class AddPoll extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('add poll');
+    this.props.dispatch(handleAddPoll(this.state));
     this.props.history.push('/');
   }
 
   isDisabled = () => {
-    const {question, A, B, C, D} = this.state;
-    return (question === '' || A === '' ||
-        B === '' || C === '' || D === '')
+    const {question, a, b, c, d} = this.state;
+    return (question === '' || a === '' ||
+        b === '' || c === '' || d === '')
   }
 
   render() {
@@ -46,13 +46,13 @@ class AddPoll extends Component {
           <input type='text' value={this.state.question} onChange={(event) => this.handleChange(event, 'question')}/>
           <h3>What are the options?</h3>
           <h4>A.</h4>
-          <input type='text' value={this.state.A} onChange={(event) => this.handleChange(event, 'A')}/>
+          <input type='text' value={this.state.a} onChange={(event) => this.handleChange(event, 'a')}/>
           <h4>B.</h4>
-          <input type='text' value={this.state.B} onChange={(event) => this.handleChange(event, 'B')}/>
+          <input type='text' value={this.state.b} onChange={(event) => this.handleChange(event, 'b')}/>
           <h4>C.</h4>
-          <input type='text' value={this.state.C} onChange={(event) => this.handleChange(event, 'C')}/>
+          <input type='text' value={this.state.c} onChange={(event) => this.handleChange(event, 'c')}/>
           <h4>D.</h4>
-          <input type='text' value={this.state.D} onChange={(event) => this.handleChange(event, 'D')}/>
+          <input type='text' value={this.state.d} onChange={(event) => this.handleChange(event, 'd')}/>
 
           <button className='addpoll' type='submit' disabled={this.isDisabled()}>Submit</button>
         </form>
@@ -61,12 +61,4 @@ class AddPoll extends Component {
   }
 }
 
-/*
-const mapStateToProps = ({authedUser}) => {
-  return {
-    loading: authedUser === null
-  }
-}
-*/
-
-export default AddPoll;
+export default connect()(AddPoll);
