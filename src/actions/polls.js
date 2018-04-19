@@ -1,10 +1,6 @@
 import { savePoll } from '../utils/api';
 import { showLoading, hideLoading} from 'react-redux-loading-bar';
 
-function revisedRandId() {
-     return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10);
-}
-
 function addPoll(poll) {
   return{
     type: ADD_POLL,

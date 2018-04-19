@@ -5,6 +5,7 @@ import {handleInitialData} from '../actions/shared';
 import Home from './Home';
 import Leaderboard from './Leaderboard';
 import AddPoll from './AddPoll';
+import Poll from './Poll';
 
 class App extends Component {
   componentDidMount () {
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route exact path='/leaderboard' component={Leaderboard} />
           <Route exact path='/add' component={AddPoll} />
+          <Route path='/poll/:id' component={Poll} />
         </Switch>
       </BrowserRouter>
     );

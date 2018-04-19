@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import './styles/Dashboard.css';
 
 class Dashboard extends Component {
@@ -40,10 +41,16 @@ class Dashboard extends Component {
         </ul>     
         <ul className='poll-display-list'>
           {this.state.display === 'Answered' &&
-           this.props.answered.map((item) => <li key={item.id}>{item.question}</li>)
+           this.props.answered.map((item) => (
+            <li key={item.id}>
+             <Link className='nav-link' to={`/poll/${item.id}`}>{item.question}</Link>
+            </li>))
           }
           {this.state.display === 'Unanswered' &&
-           this.props.unanswered.map((item) => <li key={item.id}>{item.question}</li>)
+           this.props.unanswered.map((item) => (
+           <li key={item.id}>
+             <Link className='nav-link' to={`/poll/${item.id}`}>{item.question}</Link>
+           </li>))
           }
         </ul>
       </div>
