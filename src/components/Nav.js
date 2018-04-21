@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import './styles/Nav.css';
 
 class Nav extends Component {
@@ -8,13 +8,13 @@ class Nav extends Component {
       <div className='navbar'>
         <ul className='navlist'>
           <li className='navlist-li'>
-            <Link className='nav-link' to='/'>Home</Link>
+            <NavLink className='nav-link' to='/' exact activeClassName='active'>Home</NavLink>
           </li>
            <li className='navlist-li'>
-            <Link className='nav-link' to='/leaderboard'>Leaderboard</Link>
+            <NavLink className='nav-link' to='/leaderboard' activeClassName='active'>Leaderboard</NavLink>
           </li>
           <li className='navlist-li'>
-            <Link className='nav-link' to='/add'>Add Poll</Link>
+            <NavLink className='nav-link' to='/add' activeClasseName='active'>Add Poll</NavLink>
           </li>
        </ul>
       </div>
