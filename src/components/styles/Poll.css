@@ -1,3 +1,6 @@
+.poll {
+    margin-left: 8%;
+}
 .poll ul {
     display: flex;
     flex-direction: column;
@@ -7,21 +10,43 @@
 
 .poll li {
     display: flex;
-}
-
-.userprofile-li h1 {
-  margin: 0;
-  font-size: 30px;
+    padding-left: 0px;
 }
 
 .poll img {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  margin-left: 20px;
+  width: 4em;
+  height: 4em;
+  border-radius: 3em;
+  margin-left: 1em;
 }
 
-.userprofile-li p {
-  margin-top: 6px;
-  margin-bottom: 6px;
+.unanswered button {
+    background-color: white;
+    color: black;
+    border: .1em solid gray;
+    width:20%;
+    height: 2em;
+    cursor: pointer;
+    text-align: left;
+}
+
+.unanswered button:hover {
+    background-color: gray;
+    border: .1em solid black;
+}
+
+.answered button {
+    background-color: white;
+    color: black;
+    border: .1em solid gray;
+    width:20%;
+    height: 2em;
+}
+
+.polltext {
+    float: left;
+}
+
+.answertext {
+    float: right;
 }

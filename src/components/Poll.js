@@ -3,11 +3,12 @@ import {connect} from 'react-redux';
 import './styles/Poll.css';
 import Nav from './Nav';
 import LoadingBar from 'react-redux-loading-bar';
+import PollUnanswered from './PollUnanswered';
+import PollAnswered from './PollAnswered';
 
 class Poll extends Component {
   render() {
-    const id = this.props.match.params.id;
-    const poll = this.props.polls[id];
+    const {poll, vote, avatar} = this.props;
     return (
       <div className='home'>
         <LoadingBar />
@@ -21,11 +22,12 @@ class Poll extends Component {
             </li>
             <li>
               <h3>By </h3>
-              <img src={this.props.users[poll.author].avatarURL} alt={`Avatar for ${poll.author}`} />
+              <img src={avatar} alt={`Avatar for ${poll.author}`} />
             </li>
-
-
-
+            
+            {vote == null ? <PollUnanswered poll={poll}/>
+                          : <PollAnswered poll={poll} />
+            }
           </ul>
         </div>
       </div>
@@ -33,11 +35,27 @@ class Poll extends Component {
   }
 }
 
-const mapStateToProps = ({authedUser, polls, users}) => {
+const mapStateToProps = ({authedUser, polls, users}, {match}) => {
+  const id = match.params.id;
+  const poll = polls[id];
+
+  const vote = ['aVotes', 'bVotes', 'cVotes', 'dVotes'].reduce((acc, key) => {
+    if (acc !== null) {
+      return acc;
+    }
+    if (poll[key].includes(authedUser)) {
+      return key[0]; 
+    }
+    else {
+      return acc;
+    }
+  }, null);
+
+
   return {
-    authedUser,
-    polls,
-    users
+    vote,
+    poll,
+    avatar: users[poll.author].avatarURL
   }
 }
 
