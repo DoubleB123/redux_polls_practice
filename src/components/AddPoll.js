@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import './styles/AddPoll.css';
 import Nav from './Nav';
 import {handleAddPoll} from '../actions/polls';
+import LoadingBar from 'react-redux-loading-bar';
 
 class AddPoll extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class AddPoll extends Component {
   render() {
     return (
       <div className='addpoll'>
+        <LoadingBar />
         <div className='Nav'>
           <Nav />
         </div>
