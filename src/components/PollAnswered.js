@@ -15,7 +15,7 @@ class PollAnswered extends Component {
               {poll.aText}
             </span>
             <span className='answertext'>
-              {`${poll.aVotes.length / totalVotes * 100}% (${poll.aVotes.length})`}
+              {`${(poll.aVotes.length / totalVotes * 100).toFixed(2)}% (${poll.aVotes.length})`}
             </span>
           </button>
         </li> 
@@ -25,7 +25,7 @@ class PollAnswered extends Component {
               {poll.bText}
             </span>
             <span className='answertext'>
-              {`${poll.bVotes.length / totalVotes * 100}% (${poll.bVotes.length})`}
+              {`${(poll.bVotes.length / totalVotes * 100).toFixed(2)}% (${poll.bVotes.length})`}
             </span>
           </button>
         </li> 
@@ -35,7 +35,7 @@ class PollAnswered extends Component {
               {poll.cText}
             </span>
             <span className='answertext'>
-              {`${poll.cVotes.length / totalVotes * 100}% (${poll.cVotes.length})`}
+              {`${(poll.cVotes.length / totalVotes * 100).toFixed(2)}% (${poll.cVotes.length})`}
             </span>
           </button>
         </li> 
@@ -45,7 +45,7 @@ class PollAnswered extends Component {
               {poll.dText}
             </span>
             <span className='answertext'>
-              {`${poll.dVotes.length / totalVotes * 100}% (${poll.dVotes.length})`}
+              {`${(poll.dVotes.length / totalVotes * 100).toFixed(2)}% (${poll.dVotes.length})`}
             </span>
           </button>
         </li> 
