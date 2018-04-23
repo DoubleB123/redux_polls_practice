@@ -5,3 +5,11 @@ This is the Redux polls project from Tyler Mcginnis' redux course (https://tyler
 Here is a demo of the project:
 
 ![poll_demo](https://user-images.githubusercontent.com/36014115/39155263-21f697f0-4706-11e8-9697-73b7d00ed6c1.gif)
+
+# Installation:
+Requirements: Node and npm
+
+1) Clone the repo
+2) cd redux_polls_practice
+3) npm install
+4) npm start
