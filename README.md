@@ -1,15 +1,5 @@
-<img src="https://tylermcginnis.com/tylermcginnis_glasses-300.png" width="300" align="right">
+# Redux Polls App
 
-Redux Polls App
-========
+This is the Redux polls project from Tyler Mcginnis' redux course (https://tylermcginnis.com/courses/redux/). It is a "social network" where you can ask and answer questions and a leaderboard shows the amount of questions asked and answered by each user. I was provided with the inital data, in the code I hardcoded the logged in user to be Tyler Mcginnis so his stats will update will update on the leaderboard when I answer and ask a question. Here is a demo of the project:
 
-#### This is the repository for the project we'll build together during the "Redux" course at TylerMcGinnis.com, for more information on this course [click here](https://tylermcginnis.com/courses/redux/).
-
-## Hosted Project
-
-[https://tylermcginnis.com/projects/redux-polls/](https://tylermcginnis.com/projects/redux-polls/)
-
-## Notes
-Every video is coincided with a branch. If you want to compare your code with mine or you just want to play around with the code, check out the different branches on this repository.
-
-[Tyler](https://twitter.com/tylermcginnis)
+![poll_demo](https://user-images.githubusercontent.com/36014115/39155263-21f697f0-4706-11e8-9697-73b7d00ed6c1.gif)
